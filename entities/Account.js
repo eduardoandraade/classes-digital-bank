@@ -30,10 +30,10 @@ module.exports = class Account {
     addTransfer(transfer) {
         if(transfer.toUser.email === this.owner.email) {
             this.#balance += transfer.value
-            this.transfer.push(transfer)
+            this.transfers.push(transfer)
         } else if (transfer.fromUser.email === this.owner.email) {
             this.#balance -= transfer.value
-            this.transfer.push(transfer)
+            this.transfers.push(transfer)
         }
     }
 
